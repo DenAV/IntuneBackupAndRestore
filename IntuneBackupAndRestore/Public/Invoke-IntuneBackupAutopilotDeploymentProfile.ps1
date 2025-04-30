@@ -25,8 +25,8 @@
 
     #Connect to MS-Graph if required
     if($null -eq (Get-MgContext)){
-        #connect-mggraph -scopes "DeviceManagementApps.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All, DeviceManagementServiceConfig.ReadWrite.All, DeviceManagementManagedDevices.ReadWrite.All" 
-        throw "MS-Graph not connected, please sign in"
+        Write-Host "MS-Graph not connected, connecting now"
+        Connect-MgGraphClixml -secureFilePath "$env:APPDATA\CredentialIntuneBackup.xml"
     }
 	
 	# Get all Autopilot Deployment Profiles

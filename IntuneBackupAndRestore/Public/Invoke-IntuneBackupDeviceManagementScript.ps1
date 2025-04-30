@@ -25,7 +25,7 @@ function Invoke-IntuneBackupDeviceManagementScript {
 
     #Connect to MS-Graph if required
     if($null -eq (Get-MgContext)){
-        #connect-mggraph -scopes "DeviceManagementApps.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All, DeviceManagementServiceConfig.ReadWrite.All, DeviceManagementManagedDevices.ReadWrite.All" 
+        Write-Host "MS-Graph not connected, connecting now"
         Connect-MgGraphClixml -secureFilePath "$env:APPDATA\CredentialIntuneBackup.xml"
     }
 
