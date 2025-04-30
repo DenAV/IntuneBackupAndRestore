@@ -52,61 +52,58 @@ function Start-IntuneBackup() {
 		Write-Host ""
     }
 
-    Write-Host "IntuneBackupAutopilotDeploymentProfile"
+    Write-Host "IntuneBackupAutopilotDeploymentProfile" -ForegroundColor Yellow
     Invoke-IntuneBackupAutopilotDeploymentProfile -Path $Path
 
-    Write-Host "IntuneBackupAutopilotDeploymentProfileAssignment"
+    Write-Host "IntuneBackupAutopilotDeploymentProfileAssignment" -ForegroundColor Yellow
     Invoke-IntuneBackupAutopilotDeploymentProfileAssignment -Path $Path
     
-    Write-Host "IntuneBackupClientApp"
+    Write-Host "IntuneBackupClientApp" -ForegroundColor Yellow
     Invoke-IntuneBackupClientApp -Path $Path
 
-    Write-Host "IntuneBackupClientAppAssignment"
+    Write-Host "IntuneBackupClientAppAssignment" -ForegroundColor Yellow
     Invoke-IntuneBackupClientAppAssignment -Path $Path
 
-    Write-Host "IntuneBackupConfigurationPolicy"
+    Write-Host "IntuneBackupConfigurationPolicy" -ForegroundColor Yellow
     Invoke-IntuneBackupConfigurationPolicy -Path $Path
 
-    Write-Host "IntuneBackupConfigurationPolicyAssignment"
+    Write-Host "IntuneBackupConfigurationPolicyAssignment" -ForegroundColor Yellow
     Invoke-IntuneBackupConfigurationPolicyAssignment -Path $Path
 
-    Write-Host "IntuneBackupDeviceCompliancePolicy"
+    Write-Host "IntuneBackupDeviceCompliancePolicy" -ForegroundColor Yellow
     Invoke-IntuneBackupDeviceCompliancePolicy -Path $Path
 
-    Write-Host "IntuneBackupDeviceCompliancePolicyAssignment"
+    Write-Host "IntuneBackupDeviceCompliancePolicyAssignment" -ForegroundColor Yellow
     Invoke-IntuneBackupDeviceCompliancePolicyAssignment -Path $Path
 
-    Write-Host "IntuneBackupDeviceConfiguration"
+    Write-Host "IntuneBackupDeviceConfiguration" -ForegroundColor Yellow
     Invoke-IntuneBackupDeviceConfiguration -Path $Path
 
-    Write-Host "IntuneBackupDeviceConfigurationAssignment"
+    Write-Host "IntuneBackupDeviceConfigurationAssignment" -ForegroundColor Yellow
     Invoke-IntuneBackupDeviceConfigurationAssignment -Path $Path
 
-    Write-Host "IntuneBackupDeviceHealthScript"
+    Write-Host "IntuneBackupDeviceHealthScript" -ForegroundColor Yellow
     Invoke-IntuneBackupDeviceHealthScript -Path $Path
 
-    Write-Host "IntuneBackupDeviceHealthScriptAssignment"
+    Write-Host "IntuneBackupDeviceHealthScriptAssignment" -ForegroundColor Yellow
     Invoke-IntuneBackupDeviceHealthScriptAssignment -Path $Path
 
-    Write-Host "IntuneBackupDeviceManagementScript"
+    Write-Host "IntuneBackupDeviceManagementScript" -ForegroundColor Yellow
     Invoke-IntuneBackupDeviceManagementScript -Path $Path
 
-    Write-Host "IntuneBackupDeviceManagementScriptAssignment"
+    Write-Host "IntuneBackupDeviceManagementScriptAssignment" -ForegroundColor Yellow
     Invoke-IntuneBackupDeviceManagementScriptAssignment -Path $Path
 
-    Write-Host "IntuneBackupGroupPolicyConfiguration"
+    Write-Host "IntuneBackupGroupPolicyConfiguration" -ForegroundColor Yellow
     Invoke-IntuneBackupGroupPolicyConfiguration -Path $Path
 
-    Write-Host "IntuneBackupGroupPolicyConfigurationAssignment"
+    Write-Host "IntuneBackupGroupPolicyConfigurationAssignment" -ForegroundColor Yellow
     Invoke-IntuneBackupGroupPolicyConfigurationAssignment -Path $Path
 
-    Write-Host "IntuneBackupDeviceManagementIntent"
+    Write-Host "IntuneBackupDeviceManagementIntent" -ForegroundColor Yellow
     Invoke-IntuneBackupDeviceManagementIntent -Path $Path
 
-    Write-Host "IntuneBackupAppProtectionPolicy"
+    Write-Host "IntuneBackupAppProtectionPolicy" -ForegroundColor Yellow
     Invoke-IntuneBackupAppProtectionPolicy -Path $Path
 
-    #Write-Host "IntuneBackupDeviceHealthScript"
-    #Invoke-IntuneBackupDeviceHealthScript -Path $Path
-    #Invoke-IntuneBackupDeviceHealthScriptAssignment -Path $Path
 }
