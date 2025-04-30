@@ -52,24 +52,61 @@ function Start-IntuneBackup() {
 		Write-Host ""
     }
 
+    Write-Host "IntuneBackupAutopilotDeploymentProfile"
     Invoke-IntuneBackupAutopilotDeploymentProfile -Path $Path
+
+    Write-Host "IntuneBackupAutopilotDeploymentProfileAssignment"
     Invoke-IntuneBackupAutopilotDeploymentProfileAssignment -Path $Path
+    
+    Write-Host "IntuneBackupClientApp"
     Invoke-IntuneBackupClientApp -Path $Path
+
+    Write-Host "IntuneBackupClientAppAssignment"
     Invoke-IntuneBackupClientAppAssignment -Path $Path
+
+    Write-Host "IntuneBackupConfigurationPolicy"
     Invoke-IntuneBackupConfigurationPolicy -Path $Path
+
+    Write-Host "IntuneBackupConfigurationPolicyAssignment"
     Invoke-IntuneBackupConfigurationPolicyAssignment -Path $Path
+
+    Write-Host "IntuneBackupDeviceCompliancePolicy"
     Invoke-IntuneBackupDeviceCompliancePolicy -Path $Path
+
+    Write-Host "IntuneBackupDeviceCompliancePolicyAssignment"
     Invoke-IntuneBackupDeviceCompliancePolicyAssignment -Path $Path
+
+    Write-Host "IntuneBackupDeviceConfiguration"
     Invoke-IntuneBackupDeviceConfiguration -Path $Path
+
+    Write-Host "IntuneBackupDeviceConfigurationAssignment"
     Invoke-IntuneBackupDeviceConfigurationAssignment -Path $Path
+
+    Write-Host "IntuneBackupDeviceHealthScript"
     Invoke-IntuneBackupDeviceHealthScript -Path $Path
+
+    Write-Host "IntuneBackupDeviceHealthScriptAssignment"
     Invoke-IntuneBackupDeviceHealthScriptAssignment -Path $Path
+
+    Write-Host "IntuneBackupDeviceManagementScript"
     Invoke-IntuneBackupDeviceManagementScript -Path $Path
+
+    Write-Host "IntuneBackupDeviceManagementScriptAssignment"
     Invoke-IntuneBackupDeviceManagementScriptAssignment -Path $Path
+
+    Write-Host "IntuneBackupGroupPolicyConfiguration"
     Invoke-IntuneBackupGroupPolicyConfiguration -Path $Path
+
+    Write-Host "IntuneBackupGroupPolicyConfigurationAssignment"
     Invoke-IntuneBackupGroupPolicyConfigurationAssignment -Path $Path
+
+    Write-Host "IntuneBackupDeviceManagementIntent"
     Invoke-IntuneBackupDeviceManagementIntent -Path $Path
+
+    Write-Host "IntuneBackupAppProtectionPolicy"
     Invoke-IntuneBackupAppProtectionPolicy -Path $Path
-    Invoke-IntuneBackupDeviceHealthScript -Path $Path
-    Invoke-IntuneBackupDeviceHealthScriptAssignment -Path $Path
+
+    #Write-Host "IntuneBackupDeviceHealthScript"
+    #Invoke-IntuneBackupDeviceHealthScript -Path $Path
+    #Invoke-IntuneBackupDeviceHealthScriptAssignment -Path $Path
 }
