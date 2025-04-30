@@ -25,7 +25,8 @@ function Invoke-IntuneBackupDeviceCompliancePolicyAssignment {
 
      #Connect to MS-Graph if required
      if($null -eq (Get-MgContext)){
-        connect-mggraph -scopes "DeviceManagementApps.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All, DeviceManagementServiceConfig.ReadWrite.All" 
+        #connect-mggraph -scopes "DeviceManagementApps.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All, DeviceManagementServiceConfig.ReadWrite.All" 
+        Connect-MgGraphClixml -secureFilePath "$env:APPDATA\CredentialIntuneBackup.xml"
     }
 
     # Get all Device Compliance Policies

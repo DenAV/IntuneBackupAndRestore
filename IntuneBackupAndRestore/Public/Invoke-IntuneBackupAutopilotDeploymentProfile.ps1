@@ -25,7 +25,8 @@
 
     #Connect to MS-Graph if required
     if($null -eq (Get-MgContext)){
-        connect-mggraph -scopes "DeviceManagementApps.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All, DeviceManagementServiceConfig.ReadWrite.All, DeviceManagementManagedDevices.ReadWrite.All" 
+        #connect-mggraph -scopes "DeviceManagementApps.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All, DeviceManagementServiceConfig.ReadWrite.All, DeviceManagementManagedDevices.ReadWrite.All" 
+        throw "MS-Graph not connected, please sign in"
     }
 	
 	# Get all Autopilot Deployment Profiles
