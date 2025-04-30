@@ -23,10 +23,17 @@ Install-Module -Name IntuneBackupAndRestore
 # Update IntuneBackupAndRestore from the PowerShell Gallery
 Update-Module -Name IntuneBackupAndRestore
 ```
-
 ## Prerequisites
-- Requires [Microsoft.Graph](https://github.com/microsoftgraph/msgraph-sdk-powershell) PowerShell Module (`Install-Module -Name Microsoft.Graph`, `Install-Module Microsoft.Graph.Beta -AllowClobber`)
+- Requires [Microsoft.Graph](https://github.com/microsoftgraph/msgraph-sdk-powershell) PowerShell Module (`Install-Module -Name Microsoft.Graph`, `Install-Module Microsoft.Graph.Beta -AllowClobber`).
+
 - Make sure to import the IntuneBackupAndRestore PowerShell module before using it with the `Import-Module IntuneBackupAndRestore` cmdlet.
+
+- **App Registration**: For automated authentication, you need to create an App Registration in Azure EntraID. Ensure the App Registration has the necessary API permissions for Microsoft Graph. You will need the following details:
+  - Tenant ID
+  - Client ID
+  - Client Secret
+
+  These details are required to securely save credentials using the `Add-CredentialClixml` cmdlet.
 
 ## Features
 
@@ -113,6 +120,17 @@ Add-CredentialClixml -TenantId "<YourTenantId>" -ClientId "<YourClientId>" -Clie
 ```powershell
 Connect-MgGraphClixml -secureFilePath "C:\Path\To\Your\ClixmlFile.xml"
 ```
+
+> **Note:** By default, the Clixml file is stored in the `%APPDATA%` directory if no path is specified.
+
+### Authentication
+Authentication is now handled through stored credentials saved in a Clixml file. This reduces the need to store sensitive data directly in the script.
+
+#### Example: Automated Authentication
+1. Save the credentials using `Add-CredentialClixml`.
+2. Use `Connect-MgGraphClixml` to authenticate automatically.
+
+> **Security Note:** Ensure the Clixml file is stored in a secure location as it contains sensitive information.
 
 ## Examples
 
