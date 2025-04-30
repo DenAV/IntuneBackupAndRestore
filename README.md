@@ -99,6 +99,21 @@ Update-Module -Name IntuneBackupAndRestore
 
 > Please note that some Client App settings can be backed up, for instance the retrieval of Win32 (un)install cmdlets, requirements, etcetera. The Client App itself is not backed up and this module does not support restoring Client Apps at this time.
 
+## New Features: Clixml Support and Authentication
+
+### Clixml Support
+The new version now supports saving and loading credentials in a secure Clixml file. This enables secure and automated authentication.
+
+#### Example: Securely Save Credentials
+```powershell
+Add-CredentialClixml -TenantId "<YourTenantId>" -ClientId "<YourClientId>" -ClientSecret (Read-Host -AsSecureString "Enter Client Secret")
+```
+
+#### Example: Connect to Microsoft Graph
+```powershell
+Connect-MgGraphClixml -secureFilePath "C:\Path\To\Your\ClixmlFile.xml"
+```
+
 ## Examples
 
 ### Example 01 - Full Intune Backup
@@ -163,6 +178,18 @@ Compare-IntuneBackupFile -ReferenceFilePath 'C:\temp\IntuneBackup\Device Configu
 ```powershell
 # The DifferenceFilePath should point to the latest Intune Backup file, as it might contain new properties.
 Compare-IntuneBackupDirectories -ReferenceDirectory 'C:\temp\IntuneBackup' -DifferenceDirectory 'C:\temp\IntuneBackup2'
+```
+
+### Addition under **Examples**
+
+### Example 10 - Saving Credentials
+```powershell
+Add-CredentialClixml -TenantId "<YourTenantId>" -ClientId "<YourClientId>" -ClientSecret (Read-Host -AsSecureString "Enter Client Secret")
+```
+
+### Example 11 - Connecting to Microsoft Graph
+```powershell
+Connect-MgGraphClixml -secureFilePath "C:\Path\To\Your\ClixmlFile.xml"
 ```
 
 ## Known Issues
