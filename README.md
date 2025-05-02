@@ -26,6 +26,8 @@ Update-Module -Name IntuneBackupAndRestore
 ## Prerequisites
 - Requires [Microsoft.Graph](https://github.com/microsoftgraph/msgraph-sdk-powershell) PowerShell Module (`Install-Module -Name Microsoft.Graph`, `Install-Module Microsoft.Graph.Beta -AllowClobber`).
 
+- Minimum requirements PowerShell Module: `Microsoft.Graph.Authentication`, `Microsoft.Graph.Intune`, `Microsoft.Graph.Beta.DeviceManagement`, `Microsoft.Graph.DeviceManagement`
+
 - Make sure to import the IntuneBackupAndRestore PowerShell module before using it with the `Import-Module IntuneBackupAndRestore` cmdlet.
 
 - **App Registration**: For automated authentication, you need to create an App Registration in Azure EntraID. Ensure the App Registration has the necessary API permissions for Microsoft Graph. You will need the following details:

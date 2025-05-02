@@ -85,5 +85,8 @@ function Invoke-IntuneBackupDeviceManagementIntent {
 				"Path"   = "Device Management Intents\$templateDisplayName\$fileName.json"
 			}
 		}
+	} else {
+		Write-Host "No Intents found"
 	}
+
 }

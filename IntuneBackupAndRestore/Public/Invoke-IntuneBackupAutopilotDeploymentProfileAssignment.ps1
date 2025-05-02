@@ -48,5 +48,8 @@
 				}
 			}
 		}
-	}
+	} 
+    else {
+        Write-Host "No Autopilot Deployment Profiles assignments from policies found"
+    }
 }

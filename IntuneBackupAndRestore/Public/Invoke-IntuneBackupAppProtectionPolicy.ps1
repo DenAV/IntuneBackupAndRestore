@@ -61,5 +61,7 @@ function Invoke-IntuneBackupAppProtectionPolicy {
 				"Path"   = "App Protection Policies\$fileName.json"
 			}
 		}
-	}
+	} else {
+        Write-Host "No App Protection Policies found"
+    }
 }

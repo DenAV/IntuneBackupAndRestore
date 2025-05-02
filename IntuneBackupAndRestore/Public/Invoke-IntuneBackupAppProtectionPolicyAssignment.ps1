@@ -29,6 +29,7 @@ function Invoke-IntuneBackupAppProtectionPolicyAssignment {
         Connect-MgGraphClixml -secureFilePath "$env:APPDATA\CredentialIntuneBackup.xml"
     }
 
+	# Get all App Protection Policies
     $appProtectionPolicies = Invoke-MgGraphRequest -Uri "/$ApiVersion/deviceAppManagement/managedAppPolicies" | Get-MgGraphAllPages
 
 	if ($appProtectionPolicies.value -ne "") {
@@ -76,5 +77,7 @@ function Invoke-IntuneBackupAppProtectionPolicyAssignment {
 				"Path"   = "App Protection Policies\Assignments\$fileName.json"
 			}
 		}
+	} else {
+		Write-Host "No App Protection Policies found to backup."
 	}
 }

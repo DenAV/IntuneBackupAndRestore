@@ -54,5 +54,9 @@
 			}
 		
 		}
-	}
+	} 
+    else {
+        Write-Host "No Autopilot Deployment Profiles found"
+    }
+    
 }
